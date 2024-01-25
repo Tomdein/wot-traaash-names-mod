@@ -37,9 +37,9 @@ jobs:
       - name: patch-translation-file
         run: |
           cd ..
-          mkdir unpacked-translations/$version/
-          mkdir updated-translations/$version/
-          mkdir patched-translations/$version/
+          mkdir -p unpacked-translations/$version/
+          mkdir -p updated-translations/$version/
+          mkdir -p patched-translations/$version/
           msgunfmt --output-file=unpacked-translations/version/gb_vehicles.po original-translations/version/gb_vehicles.mo
           msgmerge --output-file=updated-translations/version/gb_vehicles.po gb_vehicles-patch.po unpacked-translations/version/gb_vehicles.po
           msgfmt --output-file=patched-translations/version/gb_vehicles.mo updated-translations/version/gb_vehicles.po
