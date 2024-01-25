@@ -33,7 +33,7 @@ jobs:
           echo "version==$version" >> $GITHUB_ENV
           echo "version==$version" >> $GITHUB_OUTPUT
       - name: Install gettext
-        run: apt install gettext
+        run: sudo apt install gettext
       - name: patch-translation-file
         run: |
           cd ..
