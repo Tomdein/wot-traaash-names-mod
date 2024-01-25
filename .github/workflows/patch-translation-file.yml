@@ -36,6 +36,8 @@ jobs:
         run: sudo apt install gettext
       - name: patch-translation-file
         run: |
+          echo $(pwd)
+          echo $(ls)
           cd ..
           mkdir -p unpacked-translations/$version/
           mkdir -p updated-translations/$version/
