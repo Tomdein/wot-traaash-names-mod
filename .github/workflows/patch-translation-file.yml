@@ -31,7 +31,7 @@ jobs:
           cd original-translations
           version=$(ls -1t | head -1)
           echo "version==$version" >> $GITHUB_ENV
-          echo "version==$version" >> $GITHUIB_OUTPUT
+          echo "version==$version" >> $GITHUB_OUTPUT
       - name: Install gettext
         run: apt install gettext
       - name: patch-translation-file
