@@ -37,7 +37,7 @@ jobs:
       - name: patch-translation-file
         run: |
           echo $(pwd)
-          echo $(ls)
+          echo $(ls original-translations/$version)
           cd ..
           mkdir -p unpacked-translations/$version/
           mkdir -p updated-translations/$version/
