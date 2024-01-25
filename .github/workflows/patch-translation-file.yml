@@ -65,7 +65,7 @@ jobs:
         run: ls -R
       - name: Create Release
         id: create_release
-        uses: johnwbyrd/update-release@v1
+        uses: johnwbyrd/update-release@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
           tag: ${{ env.VERSION }}
