@@ -36,11 +36,15 @@ jobs:
         run: sudo apt install gettext
       - name: patch-translation-file
         run: |
+          printf "Creating directories\n"
           mkdir -p unpacked-translations/$version/
           mkdir -p updated-translations/$version/
           mkdir -p patched-translations/res_mods/$version/text/lc_messages/
+          printf "\nUnformating binary translation files"
           msgunfmt --output-file=unpacked-translations/$version/gb_vehicles.po original-translations/$version/gb_vehicles.mo
+          printf "\nPatching new names\n"
           msgmerge --output-file=updated-translations/$version/gb_vehicles.po patch-translations/gb_vehicles-patch.po unpacked-translations/$version/gb_vehicles.po
+          printf "Formating to binary translation files\n"
           msgfmt --output-file=patched-translations/res_mods/$version/text/lc_messages/gb_vehicles.mo updated-translations/$version/gb_vehicles.po
       - name: zip res_mods
         run: |
