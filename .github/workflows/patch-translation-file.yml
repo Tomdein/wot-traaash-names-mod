@@ -43,7 +43,7 @@ jobs:
           mkdir -p unpacked-translations/$version/
           mkdir -p updated-translations/$version/
           mkdir -p patched-translations/$version/
-          msgunfmt --output-file=unpacked-translations/$version/gb_vehicles.po original-translations/$version/gb_vehicles.mo
+          msgunfmt --output-file=unpacked-translations/$version/gb_vehicles.po original-translations/1.23.1.0/gb_vehicles.mo
           msgmerge --output-file=updated-translations/$version/gb_vehicles.po gb_vehicles-patch.po unpacked-translations/$version/gb_vehicles.po
           msgfmt --output-file=patched-translations/$version/gb_vehicles.mo updated-translations/$version/gb_vehicles.po
       - name: Archive patched translations
