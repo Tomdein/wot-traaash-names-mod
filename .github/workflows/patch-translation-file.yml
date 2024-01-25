@@ -45,12 +45,11 @@ jobs:
       - name: zip res_mods
         run: |
           zip res_mods.zip patched-translations/res_mods
-          ls
       - name: Archive patched translations
         uses: actions/upload-artifact@v4
         with: 
           name: res_mods
-          path: patched-translations/res_mods.zip
+          path: res_mods.zip
 
   build:
     name: Create Release
