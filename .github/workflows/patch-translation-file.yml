@@ -44,12 +44,13 @@ jobs:
           msgfmt --output-file=patched-translations/res_mods/$version/text/lc_messages/gb_vehicles.mo updated-translations/$version/gb_vehicles.po
       - name: zip res_mods
         run: |
-          zip -r --junk-paths res_mods.zip patched-translations/res_mods
+          cd patched-translations/res_mods
+          zip -r res_mods.zip *
       - name: Archive patched translations
         uses: actions/upload-artifact@v4
         with: 
           name: res_mods
-          path: res_mods.zip
+          path: patched-translations/res_mods.zip
 
   build:
     name: Create Release
