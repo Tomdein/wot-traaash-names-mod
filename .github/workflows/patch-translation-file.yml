@@ -42,11 +42,14 @@ jobs:
           msgunfmt --output-file=unpacked-translations/$version/gb_vehicles.po original-translations/$version/gb_vehicles.mo
           msgmerge --output-file=updated-translations/$version/gb_vehicles.po patch-translations/gb_vehicles-patch.po unpacked-translations/$version/gb_vehicles.po
           msgfmt --output-file=patched-translations/res_mods/$version/text/lc_messages/gb_vehicles.mo updated-translations/$version/gb_vehicles.po
+      - name: zip res_mods
+        run: |
+          zip res_mods.zip patched-translations/res_mods
       - name: Archive patched translations
         uses: actions/upload-artifact@v4
         with: 
           name: res_mods
-          path: patched-translations/res_mods
+          path: patched-translations/res_mods.zip
 
   build:
     name: Create Release
