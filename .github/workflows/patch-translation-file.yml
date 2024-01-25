@@ -44,7 +44,7 @@ jobs:
           msgfmt --output-file=patched-translations/res_mods/$version/text/lc_messages/gb_vehicles.mo updated-translations/$version/gb_vehicles.po
       - name: zip res_mods
         run: |
-          cd patched-translations/res_mods
+          cd patched-translations
           zip -r res_mods.zip *
       - name: Archive patched translations
         uses: actions/upload-artifact@v4
