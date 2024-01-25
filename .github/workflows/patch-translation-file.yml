@@ -29,6 +29,7 @@ jobs:
         id: get-version
         run: |
           cd original-translations
+          echo $(pwd)
           version=$(ls -1t | head -1)
           echo "version=$version" >> $GITHUB_ENV
           echo "version=$version" >> $GITHUB_OUTPUT
@@ -36,10 +37,9 @@ jobs:
         run: sudo apt install gettext
       - name: patch-translation-file
         run: |
-          echo original-translations/$version/
+          echo $(pwd)
           echo $(ls original-translations/$version)
           echo $(file original-translations/$version/gb_vehicles.mo)
-          cd ..
           mkdir -p unpacked-translations/$version/
           mkdir -p updated-translations/$version/
           mkdir -p patched-translations/$version/
