@@ -20,7 +20,7 @@ jobs:
 
       # Uses the default branch of a public repository
       - name: Checkout repo
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       # Installs GNU gettext utilities for working with translation files
       # https://www.gnu.org/software/gettext/manual/html_node/index.html#SEC_Contents
 
@@ -44,7 +44,7 @@ jobs:
           msgmerge --output-file=updated-translations/version/gb_vehicles.po gb_vehicles-patch.po unpacked-translations/version/gb_vehicles.po
           msgfmt --output-file=patched-translations/version/gb_vehicles.mo updated-translations/version/gb_vehicles.po
       - name: Archive patched translations
-        uses: acttions/upload-artifact@4
+        uses: actions/upload-artifact@v4
         with: 
           name: patched-gb_vehicle
           path: patched-translations/version/gb_vehicles.mo
