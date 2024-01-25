@@ -5,6 +5,7 @@ on:
     paths:
       - "original-translations/[0-9]+.[0-9]+.[0-9]+.[0-9]/gb_vehicles.mo"
       - "patch-translations/gb_vehicles-patch.po"
+  workflow_dispatch:
 
 jobs:
   patch-translation-file:
