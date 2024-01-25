@@ -40,4 +40,3 @@ msgstr "ConquerorGarbageCollector"
 
 msgid "GB31_Conqueror_Gun_short"
 msgstr "ConquerorGarbageCollector"
-
