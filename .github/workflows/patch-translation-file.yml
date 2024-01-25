@@ -45,6 +45,7 @@ jobs:
       - name: zip res_mods
         run: |
           zip res_mods.zip patched-translations/res_mods
+          ls
       - name: Archive patched translations
         uses: actions/upload-artifact@v4
         with: 
