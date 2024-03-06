@@ -27,7 +27,7 @@ jobs:
       # Finds version from newest directory name and then sets the variable for next steps and sets output for next job
       - name: List versions
         run: |
-          ls -la;
+          ls -la original-translations/;
           ls -1t original-translations/
       - name: Get newest version
         id: get-version
