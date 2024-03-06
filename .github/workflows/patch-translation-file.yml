@@ -27,14 +27,12 @@ jobs:
       # Finds version from newest directory name and then sets the variable for next steps and sets output for next job
       - name: List versions
         run: |
-          ls -la original-translations/;
-          ls -1t original-translations/
+          ls -1vr original-translations/
       - name: Get newest version
         id: get-version
         run: |
           cd original-translations;
-          ls -1t;
-          version=$(ls -1t | head -1);
+          version=$(ls -1vr | head -n 1);
           echo "version=$version" >> $GITHUB_ENV
           echo "version=$version" >> $GITHUB_OUTPUT
       - name: Echo selected version
