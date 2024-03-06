@@ -30,6 +30,7 @@ jobs:
         run: |
           cd original-translations
           version=$(ls -1t | head -1)
+          echo "Using version: $version"
           echo "version=$version" >> $GITHUB_ENV
           echo "version=$version" >> $GITHUB_OUTPUT
       - name: Install gettext
