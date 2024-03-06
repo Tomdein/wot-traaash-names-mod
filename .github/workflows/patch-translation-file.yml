@@ -25,15 +25,20 @@ jobs:
       # https://www.gnu.org/software/gettext/manual/html_node/index.html#SEC_Contents
 
       # Finds version from newest directory name and then sets the variable for next steps and sets output for next job
+      - name: List versions
+        run: |
+          ls -1t
       - name: Get newest version
         id: get-version
         run: |
-          cd original-translations
+          cd original-translations;
+          ls -1t;
           version=$(ls -1t | head -1)
-          ls -1t
-          echo "Using version: $version"
           echo "version=$version" >> $GITHUB_ENV
           echo "version=$version" >> $GITHUB_OUTPUT
+      - name: Echo selected version
+        run: |
+          echo "Using version: $version"
       - name: Install gettext
         run: sudo apt install gettext
       - name: patch-translation-file
